@@ -1,0 +1,11 @@
+version: '3'
+services:
+  haproxy:
+    image: haproxy:1.8
+    container_name: "haproxy"
+    network_mode: "host"
+    logging:
+      driver: journald
+    volumes:
+      - ./cert:/etc/cert
+      - ./cfg:/usr/local/etc/haproxy
